@@ -1,5 +1,7 @@
 #include "Parser.h"
 
+#include <algorithm>
+
 Parser::Parser() {
     node = NULL;
 }
@@ -27,7 +29,7 @@ void Parser::parse(const std::string& htmlCode) {
     char* code = new char[htmlCode.size()];
     codePtr = code;
 
-    memcpy(code, htmlCode.c_str(), htmlCode.size());
+    std::copy(htmlCode.begin(), htmlCode.end(), code);
 
     while (codePtr < code + htmlCode.size()) {
         char c = get();

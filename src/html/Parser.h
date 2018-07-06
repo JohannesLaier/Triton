@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "dom/Node.h"
+#include "../dom/Node.h"
 
 class Parser {
     private:
